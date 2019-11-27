@@ -8,9 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("jason.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("kate.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("molly.jpg")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ryan.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("oxygen-icons.org-oxygen-apps-office-address-book.ico")]
 
 

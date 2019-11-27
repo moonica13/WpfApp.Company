@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Oxygen-Icons.org-Oxygen-Apps-office-address-book.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -123,6 +126,9 @@
     <Resource Include="Images\kate.jpg" />
     <Resource Include="Images\molly.jpg" />
     <Resource Include="Images\ryan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Oxygen-Icons.org-Oxygen-Apps-office-address-book.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

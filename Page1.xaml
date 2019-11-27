@@ -12,7 +12,7 @@
 
         <Grid.Resources>
             <!-- Profile Report Data -->
-            <XmlDataProvider x:Key="ProfileDataSource" XPath="Infos" >
+            <XmlDataProvider x:Key = "ProfileDataSource" XPath="Infos">
                 <x:XData>
                     <Infos xmlns="">
                         <Person Name="Molly" 
@@ -35,7 +35,7 @@
 
                         <Person Name="Jason" 
                                 InfoSurname="Sadowski"
-                                InfoBirthDate="24/07/1993" 
+                                InfoBirthDate="20/08/1990" 
                                 InfoDepartment="Accountancy"
                                 InfoImage="Properties/Resources/Images/jason.jpg"/>
                     </Infos>
@@ -48,8 +48,9 @@
         </Grid.Resources>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350"/>
-            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -59,11 +60,11 @@
         </Grid.RowDefinitions>
 
         <Grid.Background>
-            <ImageBrush ImageSource="watermark.png.png"/>
+            <ImageBrush ImageSource="watermark.png.png" Stretch="UniformToFill" />
         </Grid.Background>
 
         <Label Content="Select: "
-               Grid.Column="1" 
+               Grid.Column="2" 
                Grid.Row="0"
                Grid.RowSpan="2"
                FontSize="26" 
@@ -72,11 +73,10 @@
                FontWeight="SemiBold"
                Margin="-2,100"/>
         <Border 
-            Grid.Column="1" 
+            Grid.Column="2" 
             Grid.Row="1" 
             Background="#deaaa1"
             Margin="0,0,60,120" >
-
             <Label 
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Center"
@@ -88,16 +88,21 @@
                 Height="30" Width="72"/>
         </Border>
 
-        <ListBox Name="peopleListBox" 
-                 Grid.Column="1" 
+        <!-- people list box -->
+        <ListBox
+                 SelectionMode="Single"
+                 Name="peopleListBox" 
+                 Grid.Column="2" 
                  Grid.Row="1" 
                  Background="#deaaa1"
                  Margin="0,34,60,0" 
                  ItemsSource="{Binding Source={StaticResource ProfileDataSource}, XPath=Person}"
-                 ItemTemplate="{StaticResource nameItemTemplate}"/>
-       
+                 ItemTemplate="{StaticResource nameItemTemplate}"
+                 PreviewMouseLeftButtonUp="peopleListBox_PreviewMouseLeftButtonUp" />
+
+        <!--Select and view insights-->
         <Button Grid.Row="2" 
-                Grid.Column="1" 
+                Grid.Column="2" 
                 FontWeight="Bold" 
                 Height="30" 
                 Width="50"
@@ -107,6 +112,12 @@
                 Click="Button_Click" 
                 RenderTransformOrigin="0.349,-1.19" 
                 Margin="190,34,60,86"/>
+
+        <!-- The selected name appears in a label -->
+        <Label Grid.Row="0"
+               Grid.Column="2"
+               Content="{Binding XPath=@Name}"
+               Style="{StaticResource headerTextStyle}" Margin="95,100,80,22" Height="45" />
 
     </Grid>
 </Page>

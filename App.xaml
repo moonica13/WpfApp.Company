@@ -10,8 +10,8 @@
             <Setter Property="Label.VerticalAlignment" Value="Center"></Setter>
             <Setter Property="Label.FontFamily" Value="Calibri"></Setter>
             <Setter Property="Label.FontWeight" Value="Bold"></Setter>
-            <Setter Property="Label.FontSize" Value="20"></Setter>
-            <Setter Property="Label.Foreground" Value="#c0392b"></Setter>
+            <Setter Property="Label.FontSize" Value="30"></Setter>
+            <Setter Property="Label.Foreground" Value="#000000"></Setter>
         </Style>
 
         <!-- Label style -->

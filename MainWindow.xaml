@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Company"
         mc:Ignorable="d"
-        Title=" Company Members " 
+        Title=" Company's Employees " 
         Height="500" 
         Width="700"
         Source="MainPage.xaml" 

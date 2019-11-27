@@ -33,5 +33,13 @@ namespace Company
             this.NavigationService.Navigate(employees);
         }
 
-    }  
+        private void peopleListBox_PreviewMouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var item = (sender as ListBox).SelectedItem;
+            if (item != null)
+            {
+                this.DataContext = this.peopleListBox.SelectedItem;
+            }
+        }
+    }
 }
