@@ -1,0 +1,112 @@
+﻿<Page x:Class="Company.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Company"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="700"
+      Title="Employees' Names"
+>
+    <Grid>
+
+        <Grid.Resources>
+            <!-- Profile Report Data -->
+            <XmlDataProvider x:Key="ProfileDataSource" XPath="Infos" >
+                <x:XData>
+                    <Infos xmlns="">
+                        <Person Name="Molly" 
+                                InfoSurname="Truman"
+                                InfoBirthDate="24/07/1993"
+                                InfoDepartment="Human Resources"
+                         />
+
+                        <Person Name="Kate" 
+                                InfoSurname="Smith"
+                                InfoBirthDate="08/11/1989"
+                                InfoDepartment="Data Providing"
+                                InfoImage="Properties/Resources/Images/kate.jpg"/>
+
+                        <Person Name="Ryan" 
+                                InfoSurname="Cliff"
+                                InfoBirthDate="13/05/1981" 
+                                InfoDepartment="Hardware Developement"
+                                InfoImage="Properties/Resources/Images/ryan.jpg"/>
+
+                        <Person Name="Jason" 
+                                InfoSurname="Sadowski"
+                                InfoBirthDate="24/07/1993" 
+                                InfoDepartment="Accountancy"
+                                InfoImage="Properties/Resources/Images/jason.jpg"/>
+                    </Infos>
+                </x:XData>
+            </XmlDataProvider>
+
+            <DataTemplate x:Key="nameItemTemplate">
+                <Label Content="{Binding XPath=@Name}"/>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="350"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="166"/>
+            <RowDefinition Height="166"/>
+            <RowDefinition Height="166"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="watermark.png.png"/>
+        </Grid.Background>
+
+        <Label Content="Select: "
+               Grid.Column="1" 
+               Grid.Row="0"
+               Grid.RowSpan="2"
+               FontSize="26" 
+               FontFamily="Calibri" 
+               Foreground=" #c0392b"
+               FontWeight="SemiBold"
+               Margin="-2,100"/>
+        <Border 
+            Grid.Column="1" 
+            Grid.Row="1" 
+            Background="#deaaa1"
+            Margin="0,0,60,120" >
+
+            <Label 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Center"
+                Foreground="#c0392b"
+                FontWeight="DemiBold"
+                FontSize="18"
+                Content="Name" 
+                Margin="0,0,168,0" 
+                Height="30" Width="72"/>
+        </Border>
+
+        <ListBox Name="peopleListBox" 
+                 Grid.Column="1" 
+                 Grid.Row="1" 
+                 Background="#deaaa1"
+                 Margin="0,34,60,0" 
+                 ItemsSource="{Binding Source={StaticResource ProfileDataSource}, XPath=Person}"
+                 ItemTemplate="{StaticResource nameItemTemplate}"/>
+       
+        <Button Grid.Row="2" 
+                Grid.Column="1" 
+                FontWeight="Bold" 
+                Height="30" 
+                Width="50"
+                Foreground="#c0392b"
+                Background="#f8e0dc"
+                Content="View" 
+                Click="Button_Click" 
+                RenderTransformOrigin="0.349,-1.19" 
+                Margin="190,34,60,86"/>
+
+    </Grid>
+</Page>

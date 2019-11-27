@@ -1,0 +1,48 @@
+﻿<Page x:Class="Company.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Company"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" 
+      d:DesignWidth="700"
+      Title="Insights"
+      >
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="450"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid.Background>
+            <ImageBrush ImageSource="watermark.png.png"/>
+        </Grid.Background>
+
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
+            <Label Style="{StaticResource labelStyle}" Margin="0,255,0,0" Height="40" Content="First Name:"/>
+            <Label Style="{StaticResource labelStylec}" Margin="0,255,0,0" Content="{Binding XPath=@Name}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
+            <Label Style="{StaticResource labelStyle}" Margin="0,290,0,0" Height="40" Content="Last name:"/>
+            <Label Style="{StaticResource labelStylec}" Margin="0,290,0,0" Content="{Binding XPath=@InfoSurname}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
+            <Label Style="{StaticResource labelStyle}" Margin="0,328,0,0" Content="Date of birth:" Height="40"/>
+            <Label Style="{StaticResource labelStylec}" Margin="0,328,0,0" Content="{Binding XPath=@InfoBirthDate}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
+            <Label Style="{StaticResource labelStyle}" Margin="0,365,0,0" Content="Department:" Height="40" />
+            <Label Style="{StaticResource labelStylec}" Margin="0,365,0,0" Content="{Binding XPath=@InfoDepartment}"/>
+        </StackPanel>
+
+    </Grid>
+
+
+</Page>
