@@ -114,9 +114,10 @@
                 Margin="190,34,60,86"/>
 
         <!-- The selected name appears in a label -->
-        <Label Grid.Row="0"
+        <Label x:Name="ShowingLabel"
+                Grid.Row="0"
                Grid.Column="2"
-               Content="{Binding XPath=@Name}"
+               Content="{Binding XPath=@InfoBirthDate}"
                Style="{StaticResource headerTextStyle}" Margin="95,100,80,22" Height="45" />
 
     </Grid>

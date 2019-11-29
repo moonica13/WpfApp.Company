@@ -39,7 +39,9 @@ namespace Company
             if (item != null)
             {
                 this.DataContext = this.peopleListBox.SelectedItem;
+                ShowingLabel.Background = new SolidColorBrush(Colors.Red);
             }
+            Console.WriteLine("Ana are mere");
         }
     }
 }
