@@ -13,6 +13,6 @@ namespace Company
     /// </summary>
     public partial class App : Application
     {
-
+        Console.WriteLine("Ana are meme");
     }
 }
