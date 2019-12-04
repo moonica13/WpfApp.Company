@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+using System.Data.SqlClient;
+using System.Data;
 namespace Company
 {
     /// <summary>
@@ -20,10 +9,12 @@ namespace Company
     /// </summary>
     public partial class Page1 : Page
     {
+        private const string ConnString = @"Data Source = (LocalDB)\MSSQLLocalDB; Initial Catalog=master; Integrated Security=True";
 
         public Page1()
         {
             InitializeComponent();
+            ListBox_Filling();
 
         }
 
@@ -39,9 +30,33 @@ namespace Company
             if (item != null)
             {
                 this.DataContext = this.peopleListBox.SelectedItem;
-                ShowingLabel.Background = new SolidColorBrush(Colors.Red);
             }
-            Console.WriteLine("Ana are mere");
+
+        }
+
+        public void ListBox_Filling()
+        {
+            SqlConnection con = new SqlConnection(ConnString);
+            SqlCommand cmd = new SqlCommand("select FirstName, LastName, BirthDate, Department from Employees", con);
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            con.Open();
+            DataSet ds = new DataSet();
+            ad.Fill(ds,"Employees");
+            peopleListBox.DataContext= ds;
+            con.Close();
+        }
+
+        private void peopleListBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+            this.DataContext = this.peopleListBox.SelectedItem;
+            Variabile.indexListBox = peopleListBox.SelectedIndex;
+
+        }
+
+        public static class Variabile
+        {
+            public static int indexListBox;
         }
     }
 }

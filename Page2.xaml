@@ -24,22 +24,22 @@
 
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
             <Label Style="{StaticResource labelStyle}" Margin="0,255,0,0" Height="40" Content="First Name:"/>
-            <Label Style="{StaticResource labelStylec}" Margin="0,255,0,0" Content="{Binding XPath=@Name}"/>
+            <Label Style="{StaticResource labelStylec}" Margin="0,255,0,0" Content="{Binding FirstName}"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
             <Label Style="{StaticResource labelStyle}" Margin="0,290,0,0" Height="40" Content="Last name:"/>
-            <Label Style="{StaticResource labelStylec}" Margin="0,290,0,0" Content="{Binding XPath=@InfoSurname}"/>
+            <Label Style="{StaticResource labelStylec}" Margin="0,290,0,0" Content="{Binding LastName}"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
             <Label Style="{StaticResource labelStyle}" Margin="0,328,0,0" Content="Date of birth:" Height="40"/>
-            <Label Style="{StaticResource labelStylec}" Margin="0,328,0,0" Content="{Binding XPath=@InfoBirthDate}"/>
+            <Label Style="{StaticResource labelStylec}" Margin="0,328,0,0" Content="{Binding BirthDate}"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.ColumnSpan="2"  Orientation="Horizontal">
             <Label Style="{StaticResource labelStyle}" Margin="0,365,0,0" Content="Department:" Height="40" />
-            <Label Style="{StaticResource labelStylec}" Margin="0,365,0,0" Content="{Binding XPath=@InfoDepartment}"/>
+            <Label Style="{StaticResource labelStylec}" Margin="0,365,0,0" Content="{Binding Department}"/>
         </StackPanel>
 
     </Grid>

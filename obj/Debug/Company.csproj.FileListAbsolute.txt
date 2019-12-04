@@ -19,3 +19,11 @@ C:\Users\Albu Monica\source\repos\Company\Company\obj\Debug\MainPage.baml
 C:\Users\Albu Monica\source\repos\Company\Company\obj\Debug\Page2.g.cs
 C:\Users\Albu Monica\source\repos\Company\Company\obj\Debug\Page2.baml
 C:\Users\Albu Monica\source\repos\Company\Company\obj\Debug\App.baml
+C:\Users\Albu Monica\source\repos\Company\Company\obj\Debug\Company_Content.g.cs
+C:\Users\Albu Monica\source\repos\Company\Company\bin\Debug\DBCompany.mdf
+C:\Users\Albu Monica\source\repos\Company\Company\bin\Debug\DBCompany_log.ldf
+C:\Users\Albu Monica\source\repos\Company\Company\bin\Debug\EntityFramework.dll
+C:\Users\Albu Monica\source\repos\Company\Company\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Albu Monica\source\repos\Company\Company\bin\Debug\EntityFramework.xml
+C:\Users\Albu Monica\source\repos\Company\Company\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Albu Monica\source\repos\Company\Company\obj\Debug\Company.csproj.CopyComplete

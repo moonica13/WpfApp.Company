@@ -11,7 +11,7 @@
     <Grid>
 
         <Grid.Resources>
-            <!-- Profile Report Data -->
+            <!-- Profile Report Data 
             <XmlDataProvider x:Key = "ProfileDataSource" XPath="Infos">
                 <x:XData>
                     <Infos xmlns="">
@@ -40,11 +40,11 @@
                                 InfoImage="Properties/Resources/Images/jason.jpg"/>
                     </Infos>
                 </x:XData>
-            </XmlDataProvider>
+            </XmlDataProvider> -->
 
             <DataTemplate x:Key="nameItemTemplate">
-                <Label Content="{Binding XPath=@Name}"/>
-            </DataTemplate>
+                <Label Content="{Binding FirstName}"/>
+            </DataTemplate> 
         </Grid.Resources>
 
         <Grid.ColumnDefinitions>
@@ -96,8 +96,9 @@
                  Grid.Row="1" 
                  Background="#deaaa1"
                  Margin="0,34,60,0" 
-                 ItemsSource="{Binding Source={StaticResource ProfileDataSource}, XPath=Person}"
+                 ItemsSource="{Binding Tables[0]}"
                  ItemTemplate="{StaticResource nameItemTemplate}"
+                 SelectionChanged="peopleListBox_GotFocus"
                  PreviewMouseLeftButtonUp="peopleListBox_PreviewMouseLeftButtonUp" />
 
         <!--Select and view insights-->
@@ -117,7 +118,7 @@
         <Label x:Name="ShowingLabel"
                 Grid.Row="0"
                Grid.Column="2"
-               Content="{Binding XPath=@InfoBirthDate}"
+               Content="{Binding FirstName}"
                Style="{StaticResource headerTextStyle}" Margin="95,100,80,22" Height="45" />
 
     </Grid>

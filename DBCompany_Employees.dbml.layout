@@ -1,0 +1,4 @@
+﻿Use [master]
+GO
+ALTER LOGIN [yourloginname] WITH DEFAULT_DATABASE = DBCompany
+GO
